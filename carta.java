@@ -1,21 +1,21 @@
 public class carta {
     //atributo
 
-    private int numero;
+    private String valor;
     private String palo;
 
     //constantes
     public static final String[] Palos={"ESPADAS", "COPAS", "OROS", "BASTOS"};
-    public static final int Limite_carta_palo = 12;
+    public static final String[] Valores = {"As, 2, 3, 4, 5, 6, 7, Sota, Caballo, Rey"};
     //constructor
 
-    public carta (int numero, String palo){
-        this.numero = numero;
+    public carta (String valor, String palo){
+        this.valor = valor;
         this.palo = palo;
     }
 
     @Override
     public String toString(){
-        return "[" + numero + " de " + palo + " ]";
+        return "[" + valor + " de " + palo + " ]";
     }
 }

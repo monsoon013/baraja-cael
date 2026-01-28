@@ -23,9 +23,12 @@ public class baraja {
     }
 
     private void crearBaraja() {
-        
+        for (String p : carta.Palos){
+            for (String v : carta.Valores ){
+                cartas.add(new carta(p, v));
+            }
+        }
     }
-
 
 
 }
