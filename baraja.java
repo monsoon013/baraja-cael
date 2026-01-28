@@ -30,5 +30,24 @@ public class baraja {
         }
     }
 
+    
+    public void barajar(){
+        int n = cartas.size();
+        
+        for(int i = n - 1; i > 0; i--){
+            int j = rand.nextInt(i + 1);
+
+            //Realizar el cambio
+            carta temp = cartas.get(i);
+            cartas.set(i, cartas.get(j));
+            cartas.set(j, temp);
+        }
+    }
+
+    public void siguienteCarta {
+        
+    }
+
+
 
 }
