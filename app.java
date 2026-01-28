@@ -12,7 +12,7 @@ public class app {
         System.out.println ("Tu nombre es " + nombre);
 
         //Código sin más
-
+        System.out.println("Recordatorio de que tienes que acabar el ejercicio");
         
     }
 }
