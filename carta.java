@@ -1,14 +1,14 @@
 public class carta {
-    //atributo
 
+    //atributo
     private int numero;
     private String palo;
 
     //constantes
     public static final String[] Palos={"ESPADAS", "COPAS", "OROS", "BASTOS"};
     public static final int Num = 12;
-    //constructor
 
+    //constructor
     public carta (int numero, String palo){
         this.numero = numero;
         this.palo = palo;

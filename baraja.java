@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Collections; // .sort (ordenar) .shuffle ("barajar") .swap(list, posicion1, posicion2) intercambiar puesto 
-
-import javax.swing.text.StyledEditorKit;
+import java.util.Random;
+//que. 
 
 
 
@@ -20,7 +20,7 @@ public class baraja {
 
     public baraja(){
         this.cartas = new ArrayList<>();
-        this.monton = new ArrayList<>()
+        this.monton = new ArrayList<>();
         crearBaraja();
     }
 
@@ -35,9 +35,25 @@ public class baraja {
         }
     }
 
-    public void barajar(){
+    //solución fácil sin romperme la cabeza
+    /*public void barajar(){
         Collections.shuffle(cartas); //Se "baraja" la lista
         System.out.println("Se han barajado las cartas");
+    }*/
+
+    //solución no tan fácil, tampoco difícil pero hay que romperse la cabeza un poco
+    public void barajar(){
+        Random rand = new Random();
+
+        for(int i = cartas.size() - 1; i > 0; i--){ //Recorrer la lista desde el final hasta el principio
+            int j = rand.nextInt(i + 1); //Escoger una carta entre 0 y el índica
+
+            carta temp = cartas.get(i); //temp como auxiliar para alojar temporalmente la carta
+            cartas.set(i, cartas.get(j)); //Ponemos la carta j en el hueco de i
+            cartas.set(j, temp); //Ponemos la carta temporal en el hueco de j
+        }
+
+        System.out.println("Se han barajado las cartas correctamente.");
     }
 
     public carta siguienteCarta(){
@@ -78,8 +94,8 @@ public class baraja {
             }
         }
     }
-
-        public void cartasMonton(){
+    
+    public void cartasMonton(){
         if(monton.size() == 0){
             System.out.println("No ha salido ninguna carta de momento.");
         } else {
@@ -89,6 +105,8 @@ public class baraja {
             }
         }
     }
+
+    
 
 
 
