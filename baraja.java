@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-import java.util.Collections; // ordenación de la lista
+import java.util.Collections; // .sort (ordenar) .shuffle ("barajar") .swap(list, posicion1, posicion2) intercambiar puesto 
 
 import javax.swing.text.StyledEditorKit;
 
@@ -40,11 +40,56 @@ public class baraja {
         System.out.println("Se han barajado las cartas");
     }
 
-    
+    public carta siguienteCarta(){
+        carta c = null; //Inicializar la carta
+        if(cartas.size() == 0){
+            System.out.println("No hay más cartas en la baraja."); //comprobar que la lista no está vacía
+        } else {
+            c = cartas.get(0);
+            monton.add(c);
+            cartas.remove(0);
+        }
+        return c;
+    }
 
+    public int cartasDisponibles(){
+        return cartas.size();
+    }
 
+    public void darCartas(int numCartas){
+        if(numCartas > cartasDisponibles()){
+            System.out.println("No hay cartas disponibles.");
+        } else {
+            System.out.println("Se han repartido " + numCartas + " cartas:");
+            for(int i = 0; i < numCartas; i++){
+                System.out.println(siguienteCarta());
+            }
+        }
 
-    
+    }
+
+    public void mostrarBaraja(){
+        if(cartas.size() == 0){
+            System.out.println("No quedan cartas en el mazo.");
+        } else {
+            System.out.println("Cartas disponibles en el mazo: ");
+            for(carta c : cartas){
+                System.out.println(c);
+            }
+        }
+    }
+
+        public void cartasMonton(){
+        if(monton.size() == 0){
+            System.out.println("No ha salido ninguna carta de momento.");
+        } else {
+            System.out.println("Cartas que ya han salido: ");
+            for(carta c : monton){
+                System.out.println(c);
+            }
+        }
+    }
+
 
 
 }
